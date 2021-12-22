@@ -12,13 +12,29 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-            /**
- * @OA\Get(
- *     path="/api/users",
- *     description="get all users",
- *     @OA\Response(response="default", description="get all users")
- * )
- */
+    /**
+     * @OA\Get(
+     *     path="/api/users",
+     *     description="get all users",
+     *     tags={"User"},
+     *     security={ {"bearer": {} }},
+     * @OA\Response(
+     *     response=200,
+     *     description="Get all users successfully.",
+     *  ),
+     * @OA\Response(
+     *     response=500, 
+     *     description="Internal Server Error"
+     *  ),
+     * @OA\Response(
+     *    response=401,
+     *    description="Returns when user is not authenticated",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="message", type="string", example="Unauthenciated"),
+     *    )
+     *  )
+     * )
+     */
     public function index()
     {
         $data = User::all();
