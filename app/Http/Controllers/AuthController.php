@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    /**
+ * @OA\Post(
+ *     path="/api/register",
+ *     description="Register",
+ *     @OA\Response(response="default", description="Welcome page")
+ * )
+ */
     public function register(Request $request)
     {
         $fields = $request->validate([
@@ -31,6 +38,13 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
+    /**
+ * @OA\Post(
+ *     path="/api/login",
+ *     description="Log in",
+ *     @OA\Response(response="default", description="Welcome page")
+ * )
+ */
     public function login(Request $request)
     {
         $fields = $request->validate([
@@ -58,12 +72,19 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
+        /**
+ * @OA\Post(
+ *     path="/api/logout",
+ *     description="Logout",
+ *     @OA\Response(response="default", description="Logout")
+ * )
+ */
     public function logout(Request $request)
     {
         auth()->user()->tokens()->delete();
 
         return [
-            'message' => json_encode('123');
+            'message' => 'Log out successfully!'
         ];
     }
 }

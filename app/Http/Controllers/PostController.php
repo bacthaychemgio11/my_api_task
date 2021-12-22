@@ -12,6 +12,13 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+                /**
+ * @OA\Get(
+ *     path="/api/posts",
+ *     description="get all posts",
+ *     @OA\Response(response="default", description="get all posts")
+ * )
+ */
     public function index()
     {
         return response(['data' => Post::all()], 200);
@@ -33,6 +40,13 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+                    /**
+ * @OA\Post(
+ *     path="/api/create-post/{id}",
+ *     description="create posts",
+ *     @OA\Response(response="default", description="create posts")
+ * )
+ */
     public function store(Request $request)
     {
         $request->validate([
@@ -77,6 +91,13 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
+                        /**
+ * @OA\Post(
+ *     path="/api/update-post/{id}",
+ *     description="create posts",
+ *     @OA\Response(response="default", description="create posts")
+ * )
+ */
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -97,6 +118,13 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
+    /**
+ * @OA\Post(
+ *     path="/api/delete-post/{id}",
+ *     description="delete posts",
+ *     @OA\Response(response="default", description="delete posts")
+ * )
+ */
     public function destroy($id)
     {
         $post = Post::findOrFail($id);

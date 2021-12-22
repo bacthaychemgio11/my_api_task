@@ -12,6 +12,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+            /**
+ * @OA\Get(
+ *     path="/api/users",
+ *     description="get all users",
+ *     @OA\Response(response="default", description="get all users")
+ * )
+ */
     public function index()
     {
         $data = User::all();

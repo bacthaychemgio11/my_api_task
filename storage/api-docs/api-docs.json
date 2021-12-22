@@ -1,0 +1,100 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your Application API document",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/register": {
+            "post": {
+                "description": "Register",
+                "operationId": "8a56853624e025573120a09a4c75d468",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "description": "Log in",
+                "operationId": "a3b306d14572d1f4bd6c064b3233e7b8",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "description": "Logout",
+                "operationId": "fe8f3429cd6979b3b4517e186505f9f9",
+                "responses": {
+                    "default": {
+                        "description": "Logout"
+                    }
+                }
+            }
+        },
+        "/api/posts": {
+            "get": {
+                "description": "get all posts",
+                "operationId": "e9eaf7df702a94f4443677bd1a36cfe6",
+                "responses": {
+                    "default": {
+                        "description": "get all posts"
+                    }
+                }
+            }
+        },
+        "/api/create-post/{id}": {
+            "post": {
+                "description": "create posts",
+                "operationId": "c753e5b004b6c5b328a2e4444cd2634e",
+                "responses": {
+                    "default": {
+                        "description": "create posts"
+                    }
+                }
+            }
+        },
+        "/api/update-post/{id}": {
+            "post": {
+                "description": "create posts",
+                "operationId": "84758c0cc88bb0ee8fd06c8b7b0ba277",
+                "responses": {
+                    "default": {
+                        "description": "create posts"
+                    }
+                }
+            }
+        },
+        "/api/delete-post/{id}": {
+            "post": {
+                "description": "delete posts",
+                "operationId": "8d54e933b93dbcb902728492f4735a6f",
+                "responses": {
+                    "default": {
+                        "description": "delete posts"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "description": "get all users",
+                "operationId": "c457726701591d1183b53aa71fc13441",
+                "responses": {
+                    "default": {
+                        "description": "get all users"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
